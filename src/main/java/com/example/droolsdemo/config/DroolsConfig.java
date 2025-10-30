@@ -39,8 +39,5 @@ public class DroolsConfig {
         return kieContainer.getKieBase();
     }
 
-    @Bean
-    public KieSession kieSession(KieContainer kieContainer) {
-        return kieContainer.newKieSession();
-    }
+
 }
