@@ -18,6 +18,8 @@ public class DroolsConfig {
         try {
             // 不生成pom.xml，直接构建
             
+
+            
             // 不加载现有的规则文件，避免与动态添加的规则冲突
             // 规则将通过RuleManagementService动态添加
             
