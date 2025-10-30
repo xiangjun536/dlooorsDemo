@@ -29,6 +29,10 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
@@ -43,13 +47,13 @@
             <version>${drools.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.drools</groupId>
-            <artifactId>drools-mvel</artifactId>
+            <groupId>org.kie</groupId>
+            <artifactId>kie-api</artifactId>
             <version>${drools.version}</version>
         </dependency>
         <dependency>
             <groupId>org.kie</groupId>
-            <artifactId>kie-api</artifactId>
+            <artifactId>kie-ci</artifactId>
             <version>${drools.version}</version>
         </dependency>
     </dependencies>

@@ -19,23 +19,24 @@ public class DroolsDemoRunner implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) {
+        // 这个类保持简单，主要的演示功能已经移到DynamicRuleDemoRunner中
         System.out.println("===== Drools Rule Engine Demo =====");
         
-        // Test VIP customer with large order
+        // 测试VIP客户大订单
         Order vipOrder = new Order("VIP", 1500.0);
         System.out.println("Original VIP order: " + vipOrder);
         Order processedVipOrder = orderService.processOrder(vipOrder);
         System.out.println("Processed VIP order: " + processedVipOrder);
         System.out.println();
         
-        // Test regular customer with medium order
+        // 测试普通客户中等订单
         Order regularOrder = new Order("Regular", 800.0);
         System.out.println("Original regular order: " + regularOrder);
         Order processedRegularOrder = orderService.processOrder(regularOrder);
         System.out.println("Processed regular order: " + processedRegularOrder);
         System.out.println();
         
-        // Test small order
+        // 测试小订单
         Order smallOrder = new Order("Regular", 300.0);
         System.out.println("Original small order: " + smallOrder);
         Order processedSmallOrder = orderService.processOrder(smallOrder);
