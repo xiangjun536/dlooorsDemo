@@ -1,0 +1,27 @@
+package com.example.rules
+
+import com.example.droolsdemo.model.Order;
+
+rule "VIP Customer Discount"
+    when
+        $order: Order(customerType == "VIP", amount >= 1000)
+    then
+        $order.setDiscount($order.getAmount() * 0.2); // 20% discount for VIPs with order >= 1000
+        System.out.println("Applied VIP discount: " + $order.getDiscount());
+end
+
+rule "Regular Customer Discount"
+    when
+        $order: Order(customerType == "Regular", amount >= 500, amount < 1000)
+    then
+        $order.setDiscount($order.getAmount() * 0.1); // 10% discount for regulars with order 500-999
+        System.out.println("Applied regular discount: " + $order.getDiscount());
+end
+
+rule "Small Order No Discount"
+    when
+        $order: Order(amount < 500)
+    then
+        $order.setDiscount(0);
+        System.out.println("No discount for small order");
+end
