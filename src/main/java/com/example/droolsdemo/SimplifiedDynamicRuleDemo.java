@@ -12,7 +12,7 @@ public class SimplifiedDynamicRuleDemo {
 
     public static void main(String[] args) {
         // 启动Spring Boot应用程序获取上下文
-        ApplicationContext context = SpringApplication.run(DroolsDemoApplication.class, "--spring.main.web-application-type=none");
+        ApplicationContext context = SpringApplication.run(CamundaDroolsDemoApplication.class, "--spring.main.web-application-type=none");
         
         // 获取必要的服务
         OrderService orderService = context.getBean(OrderService.class);
