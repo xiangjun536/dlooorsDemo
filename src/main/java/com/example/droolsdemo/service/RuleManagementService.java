@@ -1,9 +1,10 @@
 package com.example.droolsdemo.service;
 
+import org.camunda.bpm.engine.delegate.JavaDelegate;
 import java.util.Map;
 import java.util.Set;
 
-public interface RuleManagementService {
+public interface RuleManagementService extends JavaDelegate {
     /**
      * 添加或更新规则
      * @param ruleName 规则名称

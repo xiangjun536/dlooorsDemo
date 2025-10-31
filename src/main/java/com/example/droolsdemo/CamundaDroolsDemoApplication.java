@@ -1,10 +1,14 @@
 package com.example.droolsdemo;
 
 import com.example.droolsdemo.process.ProcessService;
+import org.camunda.bpm.engine.task.Task;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 集成Camunda和Drools的演示应用类

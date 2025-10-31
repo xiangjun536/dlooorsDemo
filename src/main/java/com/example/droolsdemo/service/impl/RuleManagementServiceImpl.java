@@ -13,6 +13,9 @@ import jakarta.annotation.PostConstruct;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import org.camunda.bpm.engine.delegate.DelegateExecution;
+import org.camunda.bpm.engine.delegate.Expression;
+import org.camunda.bpm.engine.delegate.JavaDelegate;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.locks.ReadWriteLock;
@@ -87,6 +90,19 @@ public class RuleManagementServiceImpl implements RuleManagementService {
         }
     }
 
+    @Override
+    public void execute(DelegateExecution execution) throws Exception {
+        logger.info("Executing rule management service from Camunda process");
+        // 获取流程变量
+        Boolean isVip = (Boolean) execution.getVariable("isVip");
+        Double orderAmount = (Double) execution.getVariable("orderAmount");
+        
+        logger.info("Processing order - VIP: {}, Amount: {}", isVip, orderAmount);
+        
+        // 在实际应用中，这里可以根据流程变量动态决定执行哪些规则
+        // 目前我们只是记录日志，因为规则已经通过OrderService处理
+    }
+    
     @Override
     public void reloadRules() {
         logger.info("Reloading rules, total rules: {}", ruleStore.size());
